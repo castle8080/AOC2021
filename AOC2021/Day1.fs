@@ -57,21 +57,21 @@ open System.IO
 
 let read_ints file_name = File.ReadLines(file_name) |> Seq.map Int32.Parse
 
-let solve_part_1 (distances: seq<int>) =
+let solve_part1 (distances: seq<int>) =
     distances
     |> Seq.pairwise
     |> Seq.filter (fun (a, b) -> b > a)
     |> Seq.length
 
-let run_part_1() =
+let run_part1() =
     let input_filename = "..\\..\\..\\day_01_1.txt"
 
     let answer =
         input_filename
         |> read_ints
-        |> solve_part_1
+        |> solve_part1
 
-    printfn $"Problem 1 - Part 1"
+    printfn $"Day 1: Part 1"
     printfn $"  Answer: {answer}"
 
 (*
@@ -114,7 +114,7 @@ Consider sums of a three-measurement sliding window. How many sums are larger th
 
 *)
 
-let solve_part_2 (distances: seq<int>) =
+let solve_part2 (distances: seq<int>) =
     distances
     |> Seq.windowed 3
     |> Seq.map Array.sum
@@ -122,17 +122,17 @@ let solve_part_2 (distances: seq<int>) =
     |> Seq.filter (fun (a, b) -> b > a)
     |> Seq.length
 
-let run_part_2() =
+let run_part2() =
     let input_filename = "..\\..\\..\\day_01_1.txt"
 
     let answer =
         input_filename
         |> read_ints
-        |> solve_part_2
+        |> solve_part2
 
-    printfn $"Problem 1 - Part 2"
+    printfn $"Day 1: Part 2"
     printfn $"  Answer: {answer}"
 
-let solve () =
-    run_part_1 () |> ignore
-    run_part_2 () |> ignore
+let run () =
+    run_part1 () |> ignore
+    run_part2 () |> ignore

@@ -1,7 +1,6 @@
 ﻿
 [<EntryPoint>]
 let main args =
-    //printfn "Arguments passed to function : %A" args
-    Day1.solve() |> ignore
-    Day2.run_day2_part1() |> ignore
+    Day1.run() |> ignore
+    Day2.run() |> ignore
     0
