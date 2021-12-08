@@ -72,7 +72,7 @@ let run_part1() =
         |> solve_part1
 
     printfn $"Day 1: Part 1"
-    printfn $"  Answer: {answer}"
+    printfn $"    Answer: {answer}"
 
 (*
 
@@ -131,7 +131,7 @@ let run_part2() =
         |> solve_part2
 
     printfn $"Day 1: Part 2"
-    printfn $"  Answer: {answer}"
+    printfn $"    Answer: {answer}"
 
 let run () =
     run_part1 () |> ignore
