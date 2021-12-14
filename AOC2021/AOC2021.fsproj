@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="day_07_test.txt" />
+    <Content Include="day_07_1.txt" />
+    <Compile Include="Day7.fs" />
     <Content Include="day_06_test.txt" />
     <Content Include="day_06_1.txt" />
     <Compile Include="Day6.fs" />
