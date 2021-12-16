@@ -81,6 +81,18 @@ open System.IO
 let sort_characters (s: string) =
     new string(s.ToCharArray() |> Array.sort)
 
+(*
+  I implemted finding the mappings for wiring by creating a signature
+  of a wiring configuration which is not based on a wire id.
+  A wire is given a description which is the sorted list of wires needed for
+  each digit the wire is part of. The digits are then given a signature which
+  is all of the wire signatures sorted.
+
+  This signature ends up being unique for each digit. Take an 2 wiring configuration
+  and convert to the signatures and join by the signatures to get a mapping.
+
+*)
+
 let get_wiring_signatures (wirings: string[]) =
     wirings
     |> Seq.collect (fun wiring ->
