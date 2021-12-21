@@ -11,4 +11,5 @@ let main args =
     Day8.run() |> ignore
     Day9.run() |> ignore
     Day10.run() |> ignore
+    Day11.run() |> ignore
     0
