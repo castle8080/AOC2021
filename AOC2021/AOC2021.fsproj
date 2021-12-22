@@ -6,6 +6,9 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Include="day_12_test.txt" />
+    <Content Include="day_12_1.txt" />
+    <Compile Include="Day12.fs" />
     <Content Include="day_11_1.txt" />
     <Content Include="day_11_test.txt" />
     <Compile Include="Day11.fs" />
@@ -37,6 +40,10 @@
     <Content Include="day_01_1.txt" />
     <Compile Include="Day1.fs" />
     <Compile Include="Program.fs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="FSPowerPack.Metadata.Community" Version="3.0.0" />
   </ItemGroup>
 
 </Project>

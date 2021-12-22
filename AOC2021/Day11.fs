@@ -485,19 +485,12 @@ let run_part2() =
     let b = Board.load file_name
     let all_boards = infinite_seq b Board.next
 
-    (*
-    for (c, b) in (Seq.zip count_seq all_boards |> Seq.take 5) do
-        printfn $"[{c}] -----------------------------"
-        printfn $"{Board.render b}"
-    *)
-
     let answer =
         Seq.zip count_seq all_boards
         |> Seq.find (fun (c, b) -> Board.are_all_flashing b)
     
     printfn $"Day 11 Part 2"
     printfn $"    Answer: {fst answer}"
-    //printfn $"{Board.render (snd answer)}"
 
 let run() =
     run_part1()
