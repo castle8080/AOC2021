@@ -108,7 +108,7 @@ let run_part part_name file_name days =
     printfn $"Fish Count: {fish_total} after {days} days."
 
 let run_part1() =
-    run_part "1" "../../../day_06_1.txt" 80
+    run_part "1" "../../../inputs/day_06_1.txt" 80
 
 (*
 --- Part Two ---
@@ -120,4 +120,4 @@ After 256 days in the example above, there would be a total of 26984457539 lante
 How many lanternfish would there be after 256 days?
 *)
 let run_part2() =
-    run_part "2" "../../../day_06_1.txt" 256
+    run_part "2" "../../../inputs/day_06_1.txt" 256

@@ -81,7 +81,7 @@ let rec get_best_position crab_positions fuel_spend_alg =
     _get_best min_pos max_pos
 
 let run_part1() =
-    let file_name = "../../../day_07_1.txt"
+    let file_name = "../../../inputs/day_07_1.txt"
     let crab_positions = read_crab_positions file_name
 
     let (pos, fuel_cost) = get_best_position crab_positions normal_fuel_spend
@@ -121,7 +121,7 @@ let exp_fuel_spend crab_positions (n: int) =
     )
 
 let run_part2() =
-    let file_name = "../../../day_07_1.txt"
+    let file_name = "../../../inputs/day_07_1.txt"
     let crab_positions = read_crab_positions file_name
 
     let (pos, fuel_cost) = get_best_position crab_positions exp_fuel_spend

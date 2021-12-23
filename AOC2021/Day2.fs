@@ -80,7 +80,7 @@ module Position =
         List.fold move p ms
 
 let run_part1 () =
-    let file_name = "../../../day_02_1.txt"
+    let file_name = "../../../inputs/day_02_1.txt"
     
     let movements =
         File.ReadLines file_name
@@ -164,7 +164,7 @@ module SubState =
         List.fold move s ms
 
 let run_part2 () =
-    let file_name = "../../../day_02_1.txt"
+    let file_name = "../../../inputs/day_02_1.txt"
             
     let movements =
         File.ReadLines file_name

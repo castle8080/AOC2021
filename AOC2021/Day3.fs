@@ -68,7 +68,7 @@ let read_diagnostic_file (file_name: string) : list<list<int>> =
     |> Seq.map (fun line -> Seq.map parse_binary_character line |> Seq.toList)
     |> Seq.toList
 
-let file_name = "../../../day_03_01.txt"
+let file_name = "../../../inputs/day_03_1.txt"
 
 let rec transpose (m: 'a list list) =
     if List.exists List.isEmpty m then

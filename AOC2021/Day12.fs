@@ -202,7 +202,7 @@ module Caves =
         _all_paths ["start"] check_path_p2 cs
 
 let run_part1() =
-    let file_name = "../../../day_12_1.txt"
+    let file_name = "../../../inputs/day_12_1.txt"
     let cs = Caves.load file_name
 
     let paths = Caves.all_paths_p1 cs
@@ -261,7 +261,7 @@ Given these new rules, how many paths through this cave system are there?
 *)
 
 let run_part2() =
-    let file_name = "../../../day_12_1.txt"
+    let file_name = "../../../inputs/day_12_1.txt"
     let cs = Caves.load file_name
 
     // TODO: It would be more efficient to maintain a small cave visit count context

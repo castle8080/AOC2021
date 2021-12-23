@@ -179,7 +179,7 @@ let digit_standard_wiring = [|
 |]
 
 let run_part1() =
-    let file_name = "../../../day_08_1.txt"
+    let file_name = "../../../inputs/day_08_1.txt"
     let wiring_data = parse_file file_name
 
     let n_counts =
@@ -256,7 +256,7 @@ For each entry, determine all of the wire/segment connections and decode the fou
 *)
 
 let run_part2() =
-    let file_name = "../../../day_08_1.txt"
+    let file_name = "../../../inputs/day_08_1.txt"
     let wiring_data = parse_file file_name
 
     let digits_to_num (digits: int[]) = 

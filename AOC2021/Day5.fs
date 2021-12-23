@@ -96,7 +96,7 @@ let solve lines point_algorithm =
     point_counts |> Array.filter (fun (p, count) -> count > 1)
 
 let run_algorithm part_name point_algorithm =
-    let file_name = "../../../day_05_1.txt"
+    let file_name = "../../../inputs/day_05_1.txt"
     let lines = read_lines file_name
     let dangerous_points = solve lines point_algorithm
 

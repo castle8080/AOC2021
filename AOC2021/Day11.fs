@@ -416,7 +416,7 @@ module Board =
         |> add_power
 
 let run_part1() = 
-    let file_name = "../../../day_11_1.txt"
+    let file_name = "../../../inputs/day_11_1.txt"
 
     let b = Board.load file_name
     let all_boards = infinite_seq b Board.next
@@ -477,7 +477,7 @@ If you can calculate the exact moments when the octopuses will all flash simulta
 *)
 
 let run_part2() =
-    let file_name = "../../../day_11_1.txt"
+    let file_name = "../../../inputs/day_11_1.txt"
     
     let count_seq = Seq.initInfinite id
 

@@ -72,7 +72,7 @@ let get_low_points (m: int[][]) =
     low_points
 
 let run_part1() =
-    let file_name = "../../../day_09_1.txt"
+    let file_name = "../../../inputs/day_09_1.txt"
     let input = read_file file_name
 
     let low_points = get_low_points input
@@ -143,7 +143,7 @@ let rec get_basin_positions (m: int[][]) (positions: Set<(int * int)>) (x, y) =
         adjacent_positions |> Seq.fold (get_basin_positions m) positions
 
 let run_part2() =
-    let file_name = "../../../day_09_1.txt"
+    let file_name = "../../../inputs/day_09_1.txt"
     let input = read_file file_name
 
     let low_points = get_low_points input

@@ -151,7 +151,7 @@ let read_lines file_name =
     File.ReadLines file_name |> Array.ofSeq
 
 let run_part1() =
-    let file_name = "../../../day_10_1.txt"
+    let file_name = "../../../inputs/day_10_1.txt"
     let lines = read_lines file_name
     
     let validations =
@@ -217,7 +217,7 @@ Find the completion string for each incomplete line, score the completion string
 *)
 
 let run_part2() =
-    let file_name = "../../../day_10_1.txt"
+    let file_name = "../../../inputs/day_10_1.txt"
     let lines = read_lines file_name
     
     let completion_scores = Map[

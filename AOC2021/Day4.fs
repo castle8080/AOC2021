@@ -221,7 +221,7 @@ module BingoGame =
         File.ReadLines file_name |> parse
 
 let run_part1 () =
-    let file_name = "../../../day_04_1.txt"
+    let file_name = "../../../inputs/day_04_1.txt"
     let (numbers, boards) = BingoGame.load file_name
     let result = BingoGame.play boards numbers
 
@@ -256,7 +256,7 @@ Figure out which board will win last. Once it wins, what would its final score b
     
 *)
 let run_part2 () =
-    let file_name = "../../../day_04_1.txt"
+    let file_name = "../../../inputs/day_04_1.txt"
     let (numbers, boards) = BingoGame.load file_name
     let win_events = BingoGame.get_all_win_events (BingoGame.play_all boards numbers) |> Array.ofSeq
 

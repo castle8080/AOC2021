@@ -64,7 +64,7 @@ let solve_part1 (distances: seq<int>) =
     |> Seq.length
 
 let run_part1() =
-    let input_filename = "..\\..\\..\\day_01_1.txt"
+    let input_filename = "../../../inputs/day_01_1.txt"
 
     let answer =
         input_filename
@@ -122,7 +122,7 @@ let solve_part2 (distances: seq<int>) =
     |> Seq.length
 
 let run_part2() =
-    let input_filename = "..\\..\\..\\day_01_1.txt"
+    let input_filename = "../../../inputs/day_01_1.txt"
 
     let answer =
         input_filename
