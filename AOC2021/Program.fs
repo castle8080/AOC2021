@@ -37,6 +37,7 @@ let execute (name: string) (f: unit -> unit) =
 
 [<EntryPoint>]
 let main args =
-    for (d, pn, f) in get_problems do
+    let problems = get_problems //|> List.rev |> List.take 1
+    for (d, pn, f) in problems do
         execute $"Day {d} - Part {pn}" f
     0

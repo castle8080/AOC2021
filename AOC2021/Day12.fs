@@ -170,6 +170,9 @@ module Caves =
             | [] -> true
 
     let check_path_p2 (path: list<string>) =
+
+        let st = DateTime.UtcNow
+
         let is_valid_count (pair: KeyValuePair<string, int>) =
             if is_big_cave pair.Key then
                 true
