@@ -168,9 +168,7 @@ let run_part1() =
         )
         |> Seq.sum
 
-
-    printfn $"Day 10 Part 1"
-    printfn $"    Answer: {answer}"
+    printfn $"Answer: {answer}"
 
 (*
 --- Part Two ---
@@ -249,9 +247,4 @@ let run_part2() =
 
     let answer = Array.get scores ((Array.length scores) / 2)
 
-    printfn $"Day 10 Part 2"
-    printfn $"    Answer: {answer}"
-
-let run() =
-    run_part1()
-    run_part2()
+    printfn $"Answer: {answer}"

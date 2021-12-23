@@ -72,15 +72,13 @@ let get_low_points (m: int[][]) =
     low_points
 
 let run_part1() =
-    printfn $"Day 9 Part 1"
-
     let file_name = "../../../day_09_1.txt"
     let input = read_file file_name
 
     let low_points = get_low_points input
     let answer = low_points |> Array.sumBy (fun (x, y) -> input[y][x] + 1)
 
-    printfn $"    Answer: {answer}"
+    printfn $"Answer: {answer}"
 
 (*
 --- Part Two ---
@@ -145,8 +143,6 @@ let rec get_basin_positions (m: int[][]) (positions: Set<(int * int)>) (x, y) =
         adjacent_positions |> Seq.fold (get_basin_positions m) positions
 
 let run_part2() =
-    printfn $"Day 9 Part 2"
-
     let file_name = "../../../day_09_1.txt"
     let input = read_file file_name
 
@@ -160,8 +156,4 @@ let run_part2() =
         |> Array.take 3
         |> Array.fold (*) 1
 
-    printfn $"    Answer: {answer}"
-
-let run() =
-    run_part1()
-    run_part2()
+    printfn $"Answer: {answer}"

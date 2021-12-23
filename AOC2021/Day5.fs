@@ -96,14 +96,12 @@ let solve lines point_algorithm =
     point_counts |> Array.filter (fun (p, count) -> count > 1)
 
 let run_algorithm part_name point_algorithm =
-    printfn $"Day 5: Part {part_name}"
-
     let file_name = "../../../day_05_1.txt"
     let lines = read_lines file_name
     let dangerous_points = solve lines point_algorithm
 
-    printfn $"  dangerous points: {dangerous_points[0]}"
-    printfn $"  Answer: {Array.length dangerous_points}"
+    printfn $"dangerous points: {dangerous_points[0]}"
+    printfn $"Answer: {Array.length dangerous_points}"
 
 let run_part1 () =
     run_algorithm "1" get_hv_points
@@ -148,7 +146,3 @@ let get_hvd_points ((sx, sy), (ex, ey)) =
     
 let run_part2 () =
     run_algorithm "2" get_hvd_points
-
-let run () =
-    run_part1() |> ignore
-    run_part2() |> ignore

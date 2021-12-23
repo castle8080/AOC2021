@@ -94,9 +94,8 @@ let run_part1 () =
     
     let answer = final_position.depth * final_position.horizontal
 
-    printfn "Day 2: Part 1"
-    printfn $"    Final Position: {final_position}"
-    printfn $"    Answer: {answer}"
+    printfn $"Final Position: {final_position}"
+    printfn $"Answer: {answer}"
 
 (*
 
@@ -178,11 +177,6 @@ let run_part2 () =
         |> SubState.move_all SubState.initial
             
     let answer = final_state.depth * final_state.horizontal
-        
-    printfn "Day 2: Part 2"
-    printfn $"    Final State: {final_state}"
-    printfn $"    Answer: {answer}"
 
-let run () =
-    run_part1() |> ignore
-    run_part2() |> ignore
+    printfn $"Final State: {final_state}"
+    printfn $"Answer: {answer}"

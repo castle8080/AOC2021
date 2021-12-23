@@ -178,9 +178,7 @@ let digit_standard_wiring = [|
     "abcdfg"; 
 |]
 
-let run_part1() = 
-    printfn $"Day 8 Part 1"
-
+let run_part1() =
     let file_name = "../../../day_08_1.txt"
     let wiring_data = parse_file file_name
 
@@ -196,7 +194,7 @@ let run_part1() =
         |> List.map (fun n -> n_counts[n])
         |> List.sum
 
-    printfn $"    Answer: {answer}"
+    printfn $"Answer: {answer}"
 
 (*
 --- Part Two ---
@@ -257,9 +255,7 @@ For each entry, determine all of the wire/segment connections and decode the fou
 
 *)
 
-let run_part2() = 
-    printfn $"Day 8 Part 2"
-
+let run_part2() =
     let file_name = "../../../day_08_1.txt"
     let wiring_data = parse_file file_name
 
@@ -275,10 +271,4 @@ let run_part2() =
 
     let answer = Array.sum outputs
 
-    printfn $"    Answer: {answer}"
-
-let run() =
-    run_part1() |> ignore
-    run_part2() |> ignore
-
-
+    printfn $"Answer: {answer}"

@@ -208,8 +208,7 @@ let run_part1() =
     let paths = Caves.all_paths_p1 cs
     let answer = List.length paths
 
-    printfn $"Day 12 Part 1"
-    printfn $"    Answer: {answer}"
+    printfn $"Answer: {answer}"
 
 (*
 --- Part Two ---
@@ -271,9 +270,4 @@ let run_part2() =
     let paths = Caves.all_paths_p2 cs
     let answer = List.length paths
 
-    printfn $"Day 12 Part 2"
-    printfn $"    Answer: {answer}"
-
-let run() =
-    run_part1()
-    run_part2()
+    printfn $"Answer: {answer}"

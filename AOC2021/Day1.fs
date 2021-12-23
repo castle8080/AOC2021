@@ -71,8 +71,7 @@ let run_part1() =
         |> read_ints
         |> solve_part1
 
-    printfn $"Day 1: Part 1"
-    printfn $"    Answer: {answer}"
+    printfn $"Answer: {answer}"
 
 (*
 
@@ -130,9 +129,4 @@ let run_part2() =
         |> read_ints
         |> solve_part2
 
-    printfn $"Day 1: Part 2"
-    printfn $"    Answer: {answer}"
-
-let run () =
-    run_part1 () |> ignore
-    run_part2 () |> ignore
+    printfn $"Answer: {answer}"

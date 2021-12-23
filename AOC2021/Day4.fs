@@ -225,17 +225,15 @@ let run_part1 () =
     let (numbers, boards) = BingoGame.load file_name
     let result = BingoGame.play boards numbers
 
-    printfn $"Day 4: Part 1"
-
     match result with
         | Some(gs) ->
             for winning_board in gs.winning_boards do
                 let score = Board.score gs.boards[winning_board] (Set.ofList gs.called_numbers)
                 let answer = score * gs.called_numbers.Head
-                printfn $"    Winning Board: {winning_board} - Score: {score}"
-                printfn $"    Answer: {answer}"
+                printfn $"Winning Board: {winning_board} - Score: {score}"
+                printfn $"sAnswer: {answer}"
         | _ ->
-            printfn $"    No winner."
+            printfn $"No winner."
     1
 
 (*
@@ -262,16 +260,10 @@ let run_part2 () =
     let (numbers, boards) = BingoGame.load file_name
     let win_events = BingoGame.get_all_win_events (BingoGame.play_all boards numbers) |> Array.ofSeq
 
-    printfn $"Day 4: Part 2"
-
     let (last_gs, last_win) = Array.last win_events
     for winning_board in last_win do
         let score = Board.score (boards[winning_board]) (last_gs.called_numbers |> Set.ofList)
         let answer = score * last_gs.called_numbers.Head
-        printfn $"    Last Winning Board: {winning_board} -> Score: {score} -> Round: {List.length last_gs.called_numbers}"
-        printfn $"    Answer: {answer}"
+        printfn $"Last Winning Board: {winning_board} -> Score: {score} -> Round: {List.length last_gs.called_numbers}"
+        printfn $"Answer: {answer}"
     1
-
-let run () =
-    run_part1() |> ignore
-    run_part2() |> ignore

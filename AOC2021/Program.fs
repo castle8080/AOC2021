@@ -3,26 +3,27 @@ open System.IO
 open System.Reflection
 
 (* Use reflection to get the day problem number and function to run it. *)
-let get_day_problems =
+let get_problems =
     let assembly = Assembly.GetExecutingAssembly()
-    let day_problems =
-        Seq.initInfinite(fun x -> x + 1)
-        |> Seq.map (fun d ->
-            let dt = assembly.GetType($"Day{d}")
-            if isNull dt then
-                None
-            else
-                let m = dt.GetMethod("run")
-                if not (isNull m) then
-                    Some((d, (fun() -> m.Invoke(dt, Array.empty) |> ignore)))
-                else
-                    None
-        )
-        |> Seq.takeWhile Option.isSome
-        |> Seq.collect Option.toList
-        |> List.ofSeq
 
-    day_problems
+    let get_problems_for_day d =
+        let m = assembly.GetType($"Day{d}")
+        if not (isNull m) then
+            [1; 2;]
+            |> List.map (fun pn -> (pn, m.GetMethod($"run_part{pn}")))
+            |> List.filter (fun (pn, _method) -> not (isNull _method))
+            |> List.map (fun (pn, _method) ->
+                (d, pn, (fun() -> _method.Invoke(m, Array.empty) |> ignore))
+            )
+        else
+            List.empty
+
+    let all_problems =
+        { 1 .. 25 }
+        |> Seq.collect get_problems_for_day
+        |> List.ofSeq 
+
+    all_problems
 
 (* Execute the problem with logging. *)
 let execute (name: string) (f: unit -> unit) =
@@ -36,6 +37,6 @@ let execute (name: string) (f: unit -> unit) =
 
 [<EntryPoint>]
 let main args =
-    for (d, df) in get_day_problems do
-        execute $"Day {d}" df
+    for (d, pn, f) in get_problems do
+        execute $"Day {d} - Part {pn}" f
     0

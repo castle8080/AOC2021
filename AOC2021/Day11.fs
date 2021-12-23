@@ -427,8 +427,7 @@ let run_part1() =
         |> Seq.take 101
         |> Seq.sum
 
-    printfn $"Day 11 Part 1"
-    printfn $"    Answer: {answer}"
+    printfn $"Answer: {answer}"
 
 (*
 --- Part Two ---
@@ -488,10 +487,5 @@ let run_part2() =
     let answer =
         Seq.zip count_seq all_boards
         |> Seq.find (fun (c, b) -> Board.are_all_flashing b)
-    
-    printfn $"Day 11 Part 2"
-    printfn $"    Answer: {fst answer}"
 
-let run() =
-    run_part1()
-    run_part2()
+    printfn $"Answer: {fst answer}"

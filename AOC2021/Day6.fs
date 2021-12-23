@@ -94,8 +94,6 @@ let simulation fish_counters =
     )
 
 let run_part part_name file_name days =
-    printfn $"Day 6: Part {part_name}"
-
     let initial_counters = read_fish_counters file_name
 
     let initial_fish_counts =
@@ -107,7 +105,7 @@ let run_part part_name file_name days =
     let fish_counts = Seq.item (days - 1) fish_count_days
     let fish_total = List.sumBy snd fish_counts
 
-    printfn $"    Fish Count: {fish_total} after {days} days."
+    printfn $"Fish Count: {fish_total} after {days} days."
 
 let run_part1() =
     run_part "1" "../../../day_06_1.txt" 80
@@ -123,7 +121,3 @@ How many lanternfish would there be after 256 days?
 *)
 let run_part2() =
     run_part "2" "../../../day_06_1.txt" 256
-
-let run () =
-    run_part1() |> ignore
-    run_part2() |> ignore

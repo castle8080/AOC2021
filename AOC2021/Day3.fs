@@ -104,10 +104,9 @@ let run_part1 () =
     let epsilon = binary_to_int epsilon_bits
     let answer = gamma * epsilon
 
-    printfn "Day 3: Part 1"
-    printfn $"""    Epsilon: {String.Join("", epsilon_bits)} -> {epsilon}"""
-    printfn $"""    Gamma: {String.Join("", gamma_bits)} -> {gamma}"""
-    printfn $"    Answer: {answer}"
+    printfn $"""Epsilon: {String.Join("", epsilon_bits)} -> {epsilon}"""
+    printfn $"""Gamma: {String.Join("", gamma_bits)} -> {gamma}"""
+    printfn $"Answer: {answer}"
 
 (*
 
@@ -191,11 +190,6 @@ let run_part2 () =
     let co2_rating = get_co2_rating diagnostics |> List.ofArray |> binary_to_int
     let answer = oxygen_rating * co2_rating
 
-    printfn "Day 3: Part 2"
-    printfn $"    Oxygen Rating: {oxygen_rating}"
-    printfn $"    CO2 Rating: {co2_rating}"
-    printfn $"    Answer: {answer}"
-
-let run () =
-    run_part1() |> ignore
-    run_part2() |> ignore
+    printfn $"Oxygen Rating: {oxygen_rating}"
+    printfn $"CO2 Rating: {co2_rating}"
+    printfn $"Answer: {answer}"

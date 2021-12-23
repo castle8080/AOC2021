@@ -81,13 +81,12 @@ let rec get_best_position crab_positions fuel_spend_alg =
     _get_best min_pos max_pos
 
 let run_part1() =
-    printfn $"Day 7: Part 1"
-
     let file_name = "../../../day_07_1.txt"
     let crab_positions = read_crab_positions file_name
 
     let (pos, fuel_cost) = get_best_position crab_positions normal_fuel_spend
-    printfn $"    Best Position: {pos} -> Fuel Cost: {fuel_cost}"
+    printfn $"Best Position: {pos}"
+    printfn $"Fuel Cost: {fuel_cost}"
 
 (*
 --- Part Two ---
@@ -122,14 +121,9 @@ let exp_fuel_spend crab_positions (n: int) =
     )
 
 let run_part2() =
-    printfn $"Day 7: Part 2"
-
     let file_name = "../../../day_07_1.txt"
     let crab_positions = read_crab_positions file_name
 
     let (pos, fuel_cost) = get_best_position crab_positions exp_fuel_spend
-    printfn $"    Best Position: {pos} -> Fuel Cost: {fuel_cost}"
-
-let run() = 
-    run_part1() |> ignore
-    run_part2() |> ignore
+    printfn $"Best Position: {pos}"
+    printfn $"Fuel Cost: {fuel_cost}"
