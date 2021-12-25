@@ -52,7 +52,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="FSPowerPack.Metadata.Community" Version="3.0.0" />
+    <PackageReference Include="FSharpx.Collections" Version="3.0.1" />
   </ItemGroup>
 
 </Project>

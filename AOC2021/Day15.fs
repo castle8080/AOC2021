@@ -42,6 +42,8 @@ What is the lowest total risk of any path from the top left to the bottom right?
 open System
 open System.IO
 
+open FSharpx.Collections
+
 let load_file file_name =
     File.ReadLines file_name
     |> Seq.map (fun s -> s.ToCharArray() |> Array.map (fun c -> int c - int '0'))
@@ -58,37 +60,37 @@ let find_path (m: int[][]) =
     let width = Array.length m[0]
     let end_pos = (width - 1, height - 1)
 
-    let get_adjacent (x, y) cur_path cur_score =
+    let get_adjacent (x, y) cur_path cur_score (scores_to: Map<(int * int), int>) =
         adj_vectors
         |> Seq.map (fun (dx, dy) -> (x + dx, y + dy))
         |> Seq.filter (fun (nx, ny) ->
             nx >= 0 && nx < width &&
             ny >= 0 && ny < height
         )
-        |> Seq.filter (fun p -> not(List.contains p cur_path))
+        |> Seq.filter (fun p -> not(Map.containsKey p scores_to))
         |> Seq.map (fun (nx, ny) ->
             let cost = m[ny][nx]
             (cur_score + cost, (nx, ny) :: cur_path)
         )
         |> List.ofSeq
 
-    let rec _find_path (paths: list<int * list<int * int>>) (scores_to: Map<(int * int), int>) =
-        let (cur_score, cur_path) = List.head paths
+    let rec _find_path (paths: Heap<int * list<int * int>>) (scores_to: Map<(int * int), int>) =
+        let (cur_score, cur_path) = Heap.head paths
         let cur_pos = List.head cur_path
         let p_score = Map.tryFind cur_pos scores_to
 
         if Option.isSome p_score && (Option.get p_score) <= cur_score then
             // Skip this node
-            _find_path (List.tail paths) scores_to
+            _find_path (Heap.tail paths) scores_to
         elif cur_pos = end_pos then
             (cur_score, cur_path)
         else
-            let adj_pos = get_adjacent cur_pos cur_path cur_score
-            // Using a sorted tree or a heap would be faster.
-            let new_paths = List.append adj_pos (List.tail paths) |> List.sortBy fst
+            let adj_pos = get_adjacent cur_pos cur_path cur_score scores_to
+            let new_paths = List.fold (fun paths p -> Heap.insert p paths) paths adj_pos
             _find_path new_paths (Map.add cur_pos cur_score scores_to)
-            
-    _find_path [(0, [(0, 0)])] Map.empty
+    
+    let initial_paths = (Heap.insert (0, [(0, 0)]) (Heap.empty false))
+    _find_path initial_paths Map.empty
 
 let run_part1() =
     let file_name = "../../../inputs/day_15_1.txt"
